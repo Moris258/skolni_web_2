@@ -18,6 +18,12 @@ export default config(
     ui: {
       isAccessAllowed: ({ session }) => !!session?.data,
     },
+    server: {
+      port: Number(process.env.PORT),
+      cors: {
+        origin: process.env.CORS_ORIGIN || '*',
+      },
+    },
     lists,
     session,
   })
