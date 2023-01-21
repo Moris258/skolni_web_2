@@ -31,7 +31,10 @@ const User = list({
     password: password({
       validation: { isRequired: true },
     }),
-    posts: relationship({ ref: 'Post.author', many: true }),
+    posts: relationship({
+      ref: 'Post.author',
+      many: true,
+    }),
   },
   ui: {
     listView: {

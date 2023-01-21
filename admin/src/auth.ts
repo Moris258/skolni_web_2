@@ -1,6 +1,8 @@
 import { createAuth } from '@keystone-6/auth';
 import { statelessSessions } from '@keystone-6/core/session';
 
+require('dotenv').config();
+
 const { withAuth } = createAuth({
   listKey: 'User',
   identityField: 'username',
