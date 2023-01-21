@@ -5,8 +5,6 @@ import { withAuth, session } from './src/auth';
 
 require('dotenv').config();
 
-// TODO: Use production version :)
-
 export default config(
   withAuth({
     db: {
