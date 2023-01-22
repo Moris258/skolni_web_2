@@ -1,6 +1,6 @@
 <script lang="ts">
 	// @ts-ignore handled by vite...
-	import ABOUT_IMAGE from '$lib/assets/about-image.jpg?w=350';
+	import ABOUT_IMAGE from '$lib/assets/about-image.jpg?w=550';
 </script>
 
 <div class="flex flex-col-reverse md:flex-row justify-center gap-4">
