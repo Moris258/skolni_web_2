@@ -3,4 +3,4 @@ import { GraphQLClient } from 'graphql-request';
 
 const url = process.env.GRAPHQL_URL ?? env.GRAPHQL_URL;
 
-export const client = new GraphQLClient(url);
+export const client = new GraphQLClient(url, { fetch: fetch });
