@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const GRAPHQL_URL: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
 	export const npm_node_execpath: string;
@@ -83,6 +84,7 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const INIT_CWD: string;
 	export const NODE_ENV: string;
+	export const VIPSHOME: string;
 }
 
 /**
@@ -112,6 +114,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		GRAPHQL_URL: string;
 		USER: string;
 		npm_config_user_agent: string;
 		npm_node_execpath: string;
@@ -169,6 +172,7 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		INIT_CWD: string;
 		NODE_ENV: string;
+		VIPSHOME: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: string]: string | undefined;
 	}

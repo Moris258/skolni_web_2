@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/private';
 import { GraphQLClient } from 'graphql-request';
 
-export const client = new GraphQLClient('http://localhost:3000/api/graphql');
+export const client = new GraphQLClient(env.GRAPHQL_URL as string);

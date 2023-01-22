@@ -12,7 +12,7 @@ export const timePassed = (creationDateString: string) => {
 
 	const rtf = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
 
-	if (diff < MINUTE) return 'Less than a minute';
+	if (diff < MINUTE) return 'less than a minute ago';
 	if (diff < HOUR) return rtf.format(Math.floor(elapsed / MINUTE), 'minutes');
 	if (diff < DAY) return rtf.format(Math.floor(elapsed / HOUR), 'hours');
 	if (diff < MONTH) return rtf.format(Math.floor(elapsed / DAY), 'days');

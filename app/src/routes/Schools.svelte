@@ -8,11 +8,11 @@
 <div class="material">
 	<h1>Participating schools</h1>
 
-	<div class="snap relative flex gap-4 py-2 overflow-auto">
+	<div class="flex gap-4 py-2 overflow-auto">
 		{#each schools as [name, logo, website], i}
 			<a
 				href={website}
-				class="flex-shrink-0 snap-start"
+				class="flex-shrink-0"
 				target="_blank"
 				rel="noreferrer"
 				bind:this={elements[i]}
@@ -22,13 +22,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	.snap {
-		scroll-snap-type: x mandatory;
-	}
-
-	.snap-start {
-		scroll-snap-align: start;
-	}
-</style>
