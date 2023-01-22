@@ -4,9 +4,7 @@ const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 const MONTH = 31 * DAY;
 
-export const timePassed = (creationDateString: string) => {
-	const creation = new Date(creationDateString);
-
+export const timePassed = (creation: Date) => {
 	const diff = Date.now() - creation.getTime();
 	const elapsed = -diff;
 
