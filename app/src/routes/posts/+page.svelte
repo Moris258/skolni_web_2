@@ -7,6 +7,10 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>Posts: {import.meta.env.VITE_TITLE_PREFIX}</title>
+</svelte:head>
+
 {#each data.posts as { author, title, content, creation }}
 	<div class="material max-w-screen-md mx-auto">
 		<div class="flex justify-between items-center">

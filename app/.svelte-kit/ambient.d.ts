@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const VITE_TITLE_PREFIX: string;
 	export const GRAPHQL_URL: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
@@ -114,6 +115,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		VITE_TITLE_PREFIX: string;
 		GRAPHQL_URL: string;
 		USER: string;
 		npm_config_user_agent: string;
