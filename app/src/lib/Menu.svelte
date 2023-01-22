@@ -13,15 +13,17 @@
 	let menuToggleWidth: number;
 	let menuShown = false;
 
-
-	navigating.subscribe(() => menuShown = false);
-
+	
 	const toggleMenu = () => (menuShown = !menuShown);
-
+	
 	$: {
 		if (menuToggleWidth === 0) menuShown = true;
 		else menuShown = false;
 	}
+
+	navigating.subscribe(() => {
+		if (menuToggleWidth !== 0) menuShown = false;
+	});
 </script>
 
 <nav>
