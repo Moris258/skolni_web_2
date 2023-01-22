@@ -1,5 +1,6 @@
 <script lang="ts">
-	import EU_LOGO from '$lib/assets/eu-logo.png';
+	// @ts-ignore handled by vite...
+	import EU_LOGO from '$lib/assets/eu-logo.png?w=350';
 </script>
 
 <footer class="flex justify-center">
