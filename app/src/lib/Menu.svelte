@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { slide } from 'svelte/transition';
+	import { page, navigating } from '$app/stores';
 	import MENU_ICON from '$lib/assets/menu.svg';
 
 	type MenuItems = [path: string, label: string][];
@@ -13,6 +12,9 @@
 
 	let menuToggleWidth: number;
 	let menuShown = false;
+
+
+	navigating.subscribe(() => menuShown = false);
 
 	const toggleMenu = () => (menuShown = !menuShown);
 
