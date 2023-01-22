@@ -47,6 +47,8 @@ const createElement = (entry: Entry) => {
 };
 
 const format = (target: HTMLElement, entry: Entry) => {
+	if (entry.type === 'paragraph') target.style.padding = '0.5rem 0';
+
 	if (entry.bold) target.style.fontWeight = 'bold';
 	if (entry.italic) target.style.fontStyle = 'italic';
 	if (entry.underline) target.style.textDecoration = 'underline';
