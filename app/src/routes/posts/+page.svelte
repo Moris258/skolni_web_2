@@ -18,7 +18,7 @@
 <div class="flex flex-col gap-4">
 	{#each posts as { author, title, content, creation }}
 		<div class="material w-full max-w-screen-md mx-auto">
-			<div class="flex justify-between items-center">
+			<div class="flex justify-between items-center <sm:(flex-col items-start gap-1)">
 				<div class="text-2xl font-semibold">{title}</div>
 				<div>{author.name}, {timePassed(creation)}</div>
 			</div>
