@@ -9,8 +9,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			runtime: 'edge'
-			// split: true // Had a problem with this...
+			runtime: 'edge',
+			split: true
 		})
 	}
 };
