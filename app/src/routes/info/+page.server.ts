@@ -27,3 +27,9 @@ export const load = (async () => {
 
 	return result;
 }) satisfies PageServerLoad;
+
+export const config = {
+	isr: {
+		expiration: 60
+	}
+};

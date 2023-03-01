@@ -3,15 +3,22 @@
 	import ABOUT_IMAGE from '$lib/assets/about-image.jpg?w=550';
 </script>
 
-<div class="flex flex-col-reverse md:flex-row justify-center gap-4">
-	<div class="material flex flex-col justify-center max-w-xl">
+<div class="flex flex-col-reverse items-center lg:flex-row justify-center gap-4">
+	<div class="material flex flex-col gap-2 justify-center max-w-xl">
 		<h1>About the project</h1>
 		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi debitis iste officiis,
-			voluptas voluptate rem! Hic quaerat autem alias voluptate nobis illo. Sequi ipsam, quae
-			commodi vero sit facilis recusandae?
+			The essence of the project is to familiarize all groups of students and their teachers with
+			ICT in the sciences and foreign languages teaching; link field education using IBSE and GIS;
+			engage students in discovering the laws of nature and connecting information into a meaningful
+			context; develop critical thinking, creativity and support their positive attitude to natural
+			sciences.
+		</p>
+		<p>
+			A strong emphasis on the applicability of acquired skills in practical life is to be achieved
+			by cooperating with universities with their necessary equipment and knowledge and business
+			companies to show students how close theory is to practice.
 		</p>
 	</div>
 
-	<img src={ABOUT_IMAGE} class="md:max-h-60 rounded-md" alt="One of the events." />
+	<img src={ABOUT_IMAGE} class="lg:max-h-80 rounded-md" alt="Logo of project" />
 </div>
