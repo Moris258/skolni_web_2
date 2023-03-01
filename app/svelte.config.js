@@ -10,7 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			runtime: 'edge'
-			// split: true
+			// split: true // Had a problem with this...
 		})
 	}
 };
