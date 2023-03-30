@@ -8,7 +8,7 @@
 <div class="material">
 	<h1>Participating schools</h1>
 
-	<div class="flex gap-4 py-2 overflow-auto">
+	<div class="flex gap-4 p-2">
 		{#each schools as [name, logo, website], i}
 			<a
 				href={website}
