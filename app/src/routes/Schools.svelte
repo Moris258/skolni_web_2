@@ -12,12 +12,11 @@
 		{#each schools as [name, logo, website], i}
 			<a
 				href={website}
-				class="flex-shrink-0"
 				target="_blank"
 				rel="noreferrer"
 				bind:this={elements[i]}
 			>
-				<img src={logo} class="h-24 rounded-md" title={name} alt={name} />
+				<img src={logo} class="h-auto max-h-24 rounded-md" title={name} alt={name} />
 			</a>
 		{/each}
 	</div>
