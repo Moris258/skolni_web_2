@@ -8,7 +8,7 @@
 <div class="material">
 	<h1>Participating schools</h1>
 
-	<div class="flex gap-4 p-2">
+	<div class="flex gap-4 p-2 flex-wrap justify-center">
 		{#each schools as [name, logo, website], i}
 			<a
 				href={website}
