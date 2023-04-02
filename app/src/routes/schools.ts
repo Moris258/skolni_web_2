@@ -8,20 +8,23 @@ import lizdeika from '$lib/assets/schools/lizdeika.png?w=150';
 // @ts-ignore handled by vite...
 import scoalasalva from '$lib/assets/schools/scoalasalva.jpg?w=150';
 
-type Schools = [name: string, logo: string, website: string][];
+type Schools = [name: string, logo: string, website: string, type: string][];
 
 export const schools: Schools = [
-	[
-		'Agrupamento de Escolas de Pinheiro Portugal Norte Penafiel',
-		ebspinheiro,
-		'https://www.ebspinheiro.net/'
-	],
-	['Liceo Giordano Bruno Italy Piemonte Torin', gbruno, 'https://www.gbruno.edu.it'],
-	['Gymnázium Josefa Božka, Český Těšín', gmct, 'https://www.gmct.cz'],
-	['Radviliskio Lizdeikos gimnazija Lithuania Radviliskis', lizdeika, 'http://www.lizdeika.lt/'],
+	
+	['Gymnázium Josefa Božka, Český Těšín', gmct, 'https://www.gmct.cz', ''],
+	['Liceo Giordano Bruno Italy Piemonte Torin', gbruno, 'https://www.gbruno.edu.it', ''],
+	['Radviliskio Lizdeikos gimnazija Lithuania Radviliskis', lizdeika, 'http://www.lizdeika.lt/', ''],
 	[
 		'Scoala Profesionala Tiberiu Morariu Salva Romania Nord-Vest Salva',
 		scoalasalva,
-		'https://www.scoalasalva.ro/'
-	]
+		'https://www.scoalasalva.ro/',
+		''
+	],
+	[
+		'Agrupamento de Escolas de Pinheiro Portugal Norte Penafiel',
+		ebspinheiro,
+		'https://www.ebspinheiro.net/',
+		'item1'
+	],
 ];
