@@ -35,6 +35,10 @@ const User = list({
       ref: 'Post.author',
       many: true,
     }),
+    galleries: relationship({
+      ref: 'Gallery.author',
+      many: true
+    })
   },
   ui: {
     listView: {

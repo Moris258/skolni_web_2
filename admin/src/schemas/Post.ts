@@ -1,5 +1,5 @@
 import { list } from '@keystone-6/core';
-import { relationship, timestamp, text } from '@keystone-6/core/fields';
+import { relationship, timestamp, text, select } from '@keystone-6/core/fields';
 import document from '../document';
 import roles from '../roles';
 
@@ -45,6 +45,21 @@ const Post = list({
     //     displayMode: 'textarea',
     //   },
     // }),
+    country: select({
+      type: "enum",
+      options: [
+        { label: "Czechia", value: "czechia" },
+        { label: "Lithuania", value: "lithuania" },
+        { label: "Romania", value: "romania" },
+        { label: "Italy", value: "italy" },
+        { label: "Portugal", value: "portugal" },
+      ],
+      ui: { displayMode: 'select' },
+      validation: {
+        isRequired: true
+      }
+
+    }),
     content: document,
   },
 });
