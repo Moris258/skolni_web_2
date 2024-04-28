@@ -12,7 +12,7 @@
 	<Header />
 	<Menu />
 
-	<main class="px-8 flex-1">
+	<main class="px-8 <sm:px-2 flex-1">
 		{#if $navigating}
 			<Loading />
 		{:else}
