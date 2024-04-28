@@ -15,5 +15,5 @@ export const timePassed = (creation: Date) => {
 	if (diff < DAY) return rtf.format(Math.floor(elapsed / HOUR), 'hours');
 	if (diff < MONTH) return rtf.format(Math.floor(elapsed / DAY), 'days');
 
-	return creation.toLocaleDateString();
+	return `on ${creation.toLocaleDateString()}`;
 };

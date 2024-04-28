@@ -31,6 +31,10 @@
 	</div>
 {/each}
 
+{#if data.galleries.length === 0}
+	<p class="text-center py-2">No galleries found</p>
+{/if}
+
 <style>
 	.images {
 		display: grid;

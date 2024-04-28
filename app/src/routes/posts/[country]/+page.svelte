@@ -28,3 +28,7 @@
 		</div>
 	{/each}
 </div>
+
+{#if posts.length === 0}
+	<p class="text-center py-2">No posts found</p>
+{/if}
