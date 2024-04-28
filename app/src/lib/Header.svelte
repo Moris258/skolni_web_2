@@ -2,32 +2,23 @@
 	import EU_LOGO from '$lib/assets/eu-logo.jpg';
 </script>
 
-<div class="page_top">
-	<div style="float: left; width: 400px;">
-		<a href="/">
-			<img src={EU_LOGO} alt="EU logo" />
-		</a>
-	</div>
-	<div class="vl" />
-	<div style="width: 70%">
-		<div style="text-align: center; align-items: justify-center">
-			<h1 style="font-size: 50px; color: white;">BE DIGI, BE ECO, BE IN</h1>
-			<br />
-			<h2>2021-1-CZ01-KA220-SCH-00027739</h2>
-		</div>
-	</div>
-</div>
+<header>
+	<a href="/" class="project-name">
+		<h1 class="text-4xl">BE DIGI, BE ECO, BE IN</h1>
+		<h2 class="text-lg">2021-1-CZ01-KA220-SCH-00027739</h2>
+	</a>
+
+	<img src={EU_LOGO} class="w-full max-w-md rounded-md" alt="Funded by EU logo" />
+</header>
 
 <style>
-	.page_top {
-		@apply flex flex-wrap justify-center gap-4 p-2 bg-blue-700 shadow shadow-gray-200 rounded-md select-none;
-		@apply <sm:(flex-col text-center);
-		align-items: center;
+	header {
+		@apply flex flex-wrap gap-8 justify-center items-center bg-blue-700 px-10 py-4 rounded-md;
+		@apply lg:justify-between;
 	}
 
-	.vl {
-		height: 100px;
-		border-left: 4px solid black;
-		float: left;
+	.project-name {
+		@apply appearance-none text-white text-center no-underline;
+		@apply hover:underline;
 	}
 </style>

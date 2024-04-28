@@ -1,64 +1,55 @@
 <script lang="ts">
-	import { page, navigating } from '$app/stores';
-	import MENU_ICON from '$lib/assets/menu.svg';
-
-	type MenuItems = [path: string, label: string][];
-
-	const menuItems: MenuItems = [
-		['/', 'About the project'],
-		['/info', 'Current information'],
-		['/posts', 'Posts']
-	];
-
-	let menuToggleWidth: number;
-	let menuShown = false;
-
-	
-	const toggleMenu = () => (menuShown = !menuShown);
-	
-	$: {
-		if (menuToggleWidth === 0) menuShown = true;
-		else menuShown = false;
-	}
-
-	navigating.subscribe(() => {
-		if (menuToggleWidth !== 0) menuShown = false;
-	});
+	import { menuItems } from './menu-items';
+	import { page } from '$app/stores';
 </script>
 
 <nav>
-	<div class="menu-toggle" on:click={toggleMenu} bind:clientWidth={menuToggleWidth}>
-		<img src={MENU_ICON} alt="Menu toggle" />
-	</div>
+	{#each menuItems as [name, logo, postsLink, galleryLink], i}
+		<div class="menu-item" style="z-index: {menuItems.length - i};">
+			<img
+				src={logo}
+				class="menu-logo"
+				class:active={$page.url.pathname === postsLink || $page.url.pathname === galleryLink}
+				title={name}
+				alt={name}
+			/>
 
-	{#if menuShown}
-		{#each menuItems as [path, label]}
-			<a class="menu-item" class:menu-item__active={$page.url.pathname === path} href={path}
-				>{label}</a
-			>
-		{/each}
-	{/if}
+			<div class="dropdown-content">
+				<a href={postsLink}>Posts</a>
+				<a href={galleryLink}>Gallery</a>
+			</div>
+		</div>
+	{/each}
 </nav>
 
 <style>
 	nav {
-		@apply flex flex-wrap justify-center gap-4 p-2 bg-blue-700 shadow shadow-gray-200 rounded-md select-none;
-		@apply <sm:(flex-col items-center text-center);
-	}
-
-	.menu-toggle {
-		@apply w-0; /* Hide on larger screens, value is used to track wether the toggle is shown */
-		@apply <sm:(flex justify-center w-full p-4 bg-indigo-900 rounded-md);
-		@apply active:(filter brightness-120);
+		@apply flex flex-wrap justify-center gap-6 p-4 bg-gray-700 select-none rounded-md;
 	}
 
 	.menu-item {
-		@apply text-light-100 text-lg px-4 py-2 whitespace-nowrap no-underline rounded-md;
-		@apply hover:(bg-blue-500 text-light-50 underline underline-current);
-		@apply <sm:(w-full);
+		@apply relative;
+		@apply transition-transform hover:(transform scale-110);
 	}
 
-	.menu-item__active {
-		@apply bg-blue-600;
+	.menu-item:hover .dropdown-content {
+		@apply block;
+	}
+
+	.menu-logo {
+		@apply w-35 rounded-sm;
+	}
+
+	.menu-logo.active {
+		@apply outline outline-4 outline-offset-4 outline-sky-600;
+	}
+
+	.dropdown-content {
+		@apply hidden absolute bg-gray-100 w-full z-10;
+	}
+
+	.dropdown-content a {
+		@apply block text-black text-center px-5 py-3 no-underline;
+		@apply hover:bg-gray-300;
 	}
 </style>

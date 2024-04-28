@@ -8,7 +8,7 @@ import lizdeika from '$lib/assets/schools/lizdeika.png?w=150';
 // @ts-ignore handled by vite...
 import scoalasalva from '$lib/assets/schools/scoalasalva.jpg?w=150';
 
-type Schools = [name: string, logo: string, website: string, type: string][];
+type Schools = [name: string, logo: string, website: string, type: '' | 'full-row'][];
 
 export const schools: Schools = [
 	
@@ -25,6 +25,6 @@ export const schools: Schools = [
 		'Agrupamento de Escolas de Pinheiro Portugal Norte Penafiel',
 		ebspinheiro,
 		'https://www.ebspinheiro.net/',
-		'item1'
+		'full-row'
 	],
 ];

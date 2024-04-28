@@ -4,11 +4,11 @@
 	import { navigating } from '$app/stores';
 
 	import Header from '$lib/Header.svelte';
-	import Menu from '$lib/MenuAlt.svelte';
+	import Menu from '$lib/Menu.svelte';
 	import Loading from '$lib/Loading.svelte';
 </script>
 
-<div class="container mx-auto p-4 flex flex-col gap-8 min-h-screen">
+<div class="container mx-auto p-4 flex flex-col gap-6 min-h-screen">
 	<Header />
 	<Menu />
 

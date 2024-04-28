@@ -8,7 +8,7 @@ export const timePassed = (creation: Date) => {
 	const diff = Date.now() - creation.getTime();
 	const elapsed = -diff;
 
-	const rtf = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
+	const rtf = new Intl.RelativeTimeFormat('en', { style: 'long' });
 
 	if (diff < MINUTE) return 'less than a minute ago';
 	if (diff < HOUR) return rtf.format(Math.floor(elapsed / MINUTE), 'minutes');

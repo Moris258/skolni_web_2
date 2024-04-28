@@ -3,37 +3,45 @@
 
 	export let data: PageData;
 
-	const { galleries } = data;
+	let activeImage: string | undefined = undefined;
 </script>
 
 <svelte:head>
-	<title>Galleries: {import.meta.env.VITE_TITLE_PREFIX}</title>
+	<title>Gallery: {import.meta.env.VITE_TITLE_PREFIX}</title>
 </svelte:head>
 
-<div class="flex flex-col gap-4">
-	{#each galleries as { images, name }}
-		<h1>{name}</h1>
-		<div class="gallery">
+{#if activeImage}
+	<div class="fixed flex flex-col inset-0 z-10 p-4 bg-black/85">
+		<div class="w-full flex justify-end px-12 py-2" on:click={() => (activeImage = undefined)}>
+			<span class="text-6xl text-white cursor-default hover:text-red-300">×</span>
+		</div>
+		<img src={activeImage} class="w-full h-full object-contain" alt="" />
+	</div>
+{/if}
+
+{#each data.galleries as { images, name }}
+	<div class="material">
+		<div class="text-3xl <md:text-2xl text-center font-semibold py-4">{name}</div>
+
+		<div class="images py-2 py-2">
 			{#each images as { photo }}
-				<div class="gallery-item">
-					<img src={photo.url} class="h-auto max-h-60" alt="img" />
-				</div>
+				<img src={photo.url} class="preview" on:click={() => (activeImage = photo.url)} alt="" />
 			{/each}
 		</div>
-	{/each}
-</div>
+	</div>
+{/each}
 
 <style>
-	.gallery {
+	.images {
 		display: grid;
-		grid: 4;
-		gap: 32px;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: repeat(auto-fill, min(100%, 20rem));
+		justify-content: center;
 	}
-	.gallery-item {
-		padding: 16px;
-		border: 1px solid #ddd;
-		border-radius: 2px;
-		@apply gap-20 p-2 shadow shadow-gray-200;
+
+	img.preview {
+		@apply bg-gray-300/50 object-contain p-2 rounded-md;
+		@apply transition-transform hover:(transform scale-110);
+
+		cursor: zoom-in;
 	}
 </style>

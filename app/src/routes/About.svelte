@@ -3,8 +3,8 @@
 	import ABOUT_IMAGE from '$lib/assets/project_logo.jpg?w=550';
 </script>
 
-<div class="flex flex-col-reverse items-center lg:flex-row justify-center gap-4">
-	<div class="material flex flex-col gap-2 justify-center max-w-xl">
+<div class="flex flex-col-reverse items-center md:flex-row justify-center gap-4">
+	<div class="material flex flex-col gap-2 justify-center lg:w-140 md:w-120">
 		<h1>About the project</h1>
 		<p>
 			The essence of the project is to familiarize all groups of students and their teachers with
@@ -20,5 +20,7 @@
 		</p>
 	</div>
 
-	<img src={ABOUT_IMAGE} class="lg:max-h-80 rounded-md" alt="Logo of project" />
+	<div class="flex-1 max-w-80 rounded-md">
+		<img src={ABOUT_IMAGE} class="w-auto h-auto" alt="Logo of project" />
+	</div>
 </div>

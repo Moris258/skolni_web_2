@@ -1,9 +1,9 @@
-import type { Session } from './types';
+import type { Session } from "./types";
 
-const admin = ({ session }: Session | any) => !!session?.data.admin;
+const isAdmin = ({ session }: { session?: Session }) => !!session?.data.admin;
 
-const isUserOrAdmin = ({ session }: Session | any) => {
-  if (admin({ session })) return true;
+const isUserOrAdmin = ({ session }: { session?: Session }) => {
+  if (isAdmin({ session })) return true;
 
   return {
     id: {
@@ -12,8 +12,8 @@ const isUserOrAdmin = ({ session }: Session | any) => {
   };
 };
 
-const canAccessPost = ({ session }: Session | any) => {
-  if (admin({ session })) return true;
+const isAuthorOrAdmin = ({ session }: { session?: Session }) => {
+  if (isAdmin({ session })) return true;
 
   return {
     author: {
@@ -22,11 +22,6 @@ const canAccessPost = ({ session }: Session | any) => {
       },
     },
   };
-
-  // TODO: Maybe try this...
-  // return {
-  //   author: isUserOrAdmin()
-  // };
 };
 
-export default { admin, isUserOrAdmin, canAccessPost };
+export default { isAdmin, isUserOrAdmin, isAuthorOrAdmin };

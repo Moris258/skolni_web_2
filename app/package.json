@@ -1,6 +1,6 @@
 {
-	"name": "beta",
-	"version": "0.0.1",
+	"name": "ecodigin",
+	"version": "1.0.O",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -11,29 +11,30 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
+	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-vercel": "^2.2.1",
-		"@sveltejs/kit": "^1.9.2",
-		"@typescript-eslint/eslint-plugin": "^5.54.0",
-		"@typescript-eslint/parser": "^5.54.0",
-		"eslint": "^8.35.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.8.4",
-		"prettier-plugin-svelte": "^2.8.1",
-		"svelte": "^3.54.0",
-		"svelte-check": "^3.0.4",
-		"tslib": "^2.5.0",
-		"typescript": "^4.9.5",
-		"vite": "^4.1.4",
-		"vite-imagetools": "^4.0.18",
-		"vite-plugin-windicss": "^1.8.10",
+		"@sveltejs/adapter-auto": "^3.2.0",
+		"@sveltejs/adapter-vercel": "^5.3.0",
+		"@sveltejs/kit": "^2.5.7",
+		"@sveltejs/vite-plugin-svelte": "^3.1.0",
+		"@typescript-eslint/eslint-plugin": "^7.7.1",
+		"@typescript-eslint/parser": "^7.7.1",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.38.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-svelte": "^3.2.3",
+		"svelte": "^4.2.15",
+		"svelte-check": "^3.7.0",
+		"tslib": "^2.6.2",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.10",
+		"vite-imagetools": "^7.0.1",
+		"vite-plugin-windicss": "^1.9.3",
 		"windicss": "^3.5.6"
 	},
-	"type": "module",
 	"dependencies": {
-		"graphql": "^16.6.0",
-		"graphql-request": "^5.2.0"
+		"graphql": "^16.8.1",
+		"graphql-request": "^6.1.0"
 	}
 }
