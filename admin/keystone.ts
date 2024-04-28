@@ -8,10 +8,8 @@ require("dotenv").config();
 export default config(
   withAuth({
     db: {
-      // provider: "mysql",
-      // url: process.env.DATABASE_URL as string,
-      provider: "sqlite",
-      url: "file:./db.db",
+      provider: "postgresql",
+      url: process.env.DATABASE_URL as string,
     },
     ui: {
       isAccessAllowed: ({ session }) => !!session?.data,
@@ -24,13 +22,18 @@ export default config(
     },
     storage: {
       photos: {
-        kind: "local",
+        kind: "s3",
         type: "image",
-        generateUrl: (path) => `${process.env.BASE_URL}/images${path}`,
-        serverRoute: {
-          path: "/images",
-        },
-        storagePath: "public/images",
+        accessKeyId: process.env.BUCKET_ACCESS_KEY_ID as string,
+        secretAccessKey: process.env.BUCKET_SECRET_ACCESS_KEY as string,
+        bucketName: process.env.BUCKET_NAME as string,
+        region: process.env.BUCKET_REGION as string,
+        endpoint: process.env.BUCKET_ENDPOINT as string,
+        generateUrl: (path) =>
+          path.replace(
+            process.env.BUCKET_ENDPOINT_REPLACE as string,
+            process.env.BUCKET_PUBLIC_URL as string
+          ),
       },
     },
     lists,
