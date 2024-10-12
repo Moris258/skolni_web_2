@@ -2,6 +2,7 @@ import { list } from "@keystone-6/core";
 import { relationship, select, text } from "@keystone-6/core/fields";
 
 import roles from "../roles";
+import { postTypes } from "../PostTypes";
 
 const Gallery = list({
   access: {
@@ -35,13 +36,7 @@ const Gallery = list({
     }),
     country: select({
       type: "enum",
-      options: [
-        { label: "Czechia", value: "czechia" },
-        { label: "Lithuania", value: "lithuania" },
-        { label: "Romania", value: "romania" },
-        { label: "Italy", value: "italy" },
-        { label: "Portugal", value: "portugal" },
-      ],
+      options: postTypes,
       ui: { displayMode: "select" },
       validation: {
         isRequired: true,

@@ -4,6 +4,13 @@
 </script>
 
 <nav>
+	<div class="menu-item">
+		<button class="menu-button">Latest Posts</button>
+		<div class="dropdown-content">
+			<a href="/posts/latest">Posts</a>
+			<a href="/gallery/latest">Gallery</a>
+		</div>
+	</div>
 	{#each menuItems as [name, logo, postsLink, galleryLink], i}
 		<div class="menu-item" style="z-index: {menuItems.length - i};">
 			<img
@@ -25,6 +32,11 @@
 <style>
 	nav {
 		@apply flex flex-wrap justify-center gap-6 p-4 bg-gray-700 select-none rounded-md;
+	}
+
+	.menu-button {
+		@apply w-35 rounded-sm bg-gray-300 w-full px-6 py-7.95;
+		font-size: 20px;
 	}
 
 	.menu-item {

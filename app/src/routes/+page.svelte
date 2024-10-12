@@ -1,6 +1,7 @@
 <script lang="ts">
 	import About from './About.svelte';
 	import Schools from './Schools.svelte';
+	import UsefulLinks from './UsefulLinks.svelte';
 </script>
 
 <svelte:head>
@@ -10,4 +11,5 @@
 <div class="flex flex-col gap-6">
 	<About />
 	<Schools />
+	<UsefulLinks />
 </div>
